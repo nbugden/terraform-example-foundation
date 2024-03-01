@@ -14,6 +14,18 @@
 
 name: 'tf-apply'
 on:
+  workflow_call:
+    secrets:
+      PROJECT_ID:
+        required: true
+      SERVICE_ACCOUNT_EMAIL:
+        required: true
+      TF_BACKEND:
+        required: true
+      TF_VAR_gh_token:
+        required: true
+      WIF_PROVIDER_NAME:
+        required: true
   push:
     branches:
       - 'development'
